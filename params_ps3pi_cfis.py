@@ -38,7 +38,7 @@ vignet = False
 #------------------------------------------------------------------#
 
 max_evals = 200
-path_to_csv = path + 'catalogs/' + 'MediumDeep_CFHT_CFIS_R_matched_catalog_2' + '.csv'
+path_to_csv = path + 'catalogs/' + 'CFIS_matched_deep_2_3_catalog_R_preprocessed' + '.csv'
 weights = True
 cv = 10
 feature_engineering = False
