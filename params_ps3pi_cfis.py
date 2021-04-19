@@ -40,6 +40,10 @@ vignet = False
 max_evals = 200
 path_to_csv = path + 'catalogs/' + 'CFIS_matched_deep_2_3_catalog_R_preprocessed' + '.csv'
 weights = True
+
+#path_to_csv = None
+#weights = 'Weights_CFIS_matched_deep_2_3_catalog_R.npy'
+
 cv = 10
 feature_engineering = False
 feature_importance = False

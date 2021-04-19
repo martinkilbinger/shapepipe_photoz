@@ -920,6 +920,9 @@ class LearningAlgorithms(object):
             self.train, self.test = train_test_split(self.df, test_size = 0.2, random_state=0)
             self.sample_weight_train = None
         else:
+            print('MKDEBUG')
+            print(self.df)
+            print('weight', self.sample_weight)
             self.train, self.test, self.sample_weight_train, self.sample_weight_test = train_test_split(self.df, self.sample_weight, test_size = 0.2, random_state=0)
 
         self.X_train = self.train.iloc[:,:-1]
