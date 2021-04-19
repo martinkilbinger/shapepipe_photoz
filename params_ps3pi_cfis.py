@@ -20,13 +20,13 @@ path = os.getcwd() + '/'
 bands = ['R']
 output_path = path
 output_name = 'CFIS_matched_deep_2_3_catalog_R'
-temp_path = '/n17data/jimenez/temp/'
+temp_path = './temp/'
 
 #------------------------------------------------------------------#
 # # # # # PREPROCESSING PARAMS # # # # #
 #------------------------------------------------------------------#
 
-spectral_path = '/n17data/jimenez/spectral_catalogs/'
+spectral_path = 'catalogs'
 spectral_names = ['alldeep.egs.uniq.2012jun13']
 path_to_tile_run = '/n17data/jimenez/shaperun/'
 input_path = None
@@ -38,11 +38,9 @@ vignet = False
 #------------------------------------------------------------------#
 
 max_evals = 200
-path_to_csv = path + 'catalogs/' + 'CFIS_matched_deep_2_3_catalog_R_preprocessed' + '.csv'
-weights = True
-
 #path_to_csv = None
-#weights = 'Weights_CFIS_matched_deep_2_3_catalog_R.npy'
+path_to_csv = path + 'catalogs/' + 'CFIS_matched_deep_2_3_catalog_R_preprocessed' + '.csv'
+weights = 'Weights_CFIS_matched_deep_2_3_catalog_R.npy'
 
 cv = 10
 feature_engineering = False

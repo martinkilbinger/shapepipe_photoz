@@ -179,8 +179,17 @@ if __name__ == "__main__":
                     raise TypeError("--survey needs to be set to 'unions' or 'ps3pi_cfis', please specify the full path to your DataFrame")
 
             elif path_to_csv is not None:
-                ML = LearningAlgorithms(survey = args.survey, bands = bands, path_to_csv = path_to_csv, output_name = output_name, output_path=output_path, sample_weight=weights, cv=cv, preprocessing=args.preprocess, n_jobs=args.nodes)
+                # MKDEBUG: Added the following cases
+                if weights == True:
+                    # Don't know what to do here. weights=True in LearningAlgorithms gives error
+                    sample_weights = None
+                elif type(weights) == str:
+                    sample_weights = np.load(weights)
+                else:
+                    sample_weights = None
+                ML = LearningAlgorithms(survey = args.survey, bands = bands, path_to_csv = path_to_csv, output_name = output_name, output_path=output_path, sample_weight=sample_weights, cv=cv, preprocessing=args.preprocess, n_jobs=args.nodes)
                 df = ML.dataframe()
+                df_list = [df]
                 # ML.plot_corrmat(df)
 
             algs = {'RF': RandomForest, 'ANN': ArtificialNeuralNetwork, 'LASSO': LassoRegression, 'ENET': ElasticNetRegression,
